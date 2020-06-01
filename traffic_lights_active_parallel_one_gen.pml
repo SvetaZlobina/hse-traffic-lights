@@ -118,17 +118,17 @@ active proctype P() {
 }
 
 
-ltl s1 {[] !((ns_light == green) && (sw_light == green) && (we_light == green) && (ew_light == green))};
+ltl s1 {[] !((ns_light == green) && ((sw_light == green) || (we_light == green) || (ew_light == green)))};
 
-ltl s2 {[] !((we_light == green) && (ns_light == green) && (sw_light == green) && (p_light == green))};
+ltl s2 {[] !((we_light == green) && ((ns_light == green) || (sw_light == green) || (p_light == green)))};
 
-ltl s3 {[] !((ew_light == green) && (ns_light == green) && (ne_light == green) && (p_light == green))};
+ltl s3 {[] !((ew_light == green) && ((ns_light == green) || (ne_light == green) || (p_light == green)))};
 
-ltl s4 {[] !((ne_light == green) && (ew_light == green) && (p_light == green)};
+ltl s4 {[] !((ne_light == green) && ((ew_light == green) || (p_light == green)))};
 
-ltl s5 {[] !((sw_light == green) && (we_light == green) && (ns_light == green)};
+ltl s5 {[] !((sw_light == green) && ((we_light == green) || (ns_light == green)))};
 
-ltl s6 {[] !((p_light == green) && (ne_light == green) && (ew_light == green) && (we_light == green))};
+ltl s6 {[] !((p_light == green) && ((ne_light == green) || (ew_light == green) || (we_light == green)))};
 
 ltl l1 {(
             ([]<> !((ns_light == green) && ns_sense_nempty))
